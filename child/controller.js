@@ -1,4 +1,10 @@
 let app = angular.module("MyFirstApp", [])
-app.controller("FirstController", ["$scope", "$http"], ($scope) => {
+app.run(($rootScope)=> {
+    $rootScope.name = "Santiago"
+})
+app.controller("FirstController", ($scope) => {
+    $scope.name = "Sanchez"
+   
+}).controller("ChildController", ($scope) => {
    
 })
