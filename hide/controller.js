@@ -2,13 +2,16 @@ let app = angular.module("MyFirstApp", [])
 
 app.controller("FirstController", ($scope, $http) => {
     $scope.posts = [];
+    $scope.loading = true;
     $scope.newPost = {};
     $http.get("http://jsonplaceholder.typicode.com/posts/")
         .then((resp) => {
             console.log(resp)
             $scope.posts = resp.data
+            $scope.loading = false;
         })
         , ((error) => {
+            $scope.loading = false;
             console.log(error)
         })
 
@@ -18,7 +21,7 @@ app.controller("FirstController", ($scope, $http) => {
             title: $scope.newPost.title,
             body: $scope.newPost.body,
             userId: 1
-        }, )
+        },)
             .then((resp) => {
                 console.log(resp)
                 $scope.posts.push($scope.newPost)
