@@ -1,11 +1,11 @@
 angular.module("CustomDirective", ["ngRoute"])
     .config(function ($routeProvider) {
         $routeProvider
-            .when("/",{
+            .when("/", {
                 controller: "ReposController",
                 templateUrl: "templates/home.html"
             })
-            .when("/repo/:name",{
+            .when("/repo/:name", {
                 controller: "RepoController",
                 templateUrl: "templates/repo.html"
             })
