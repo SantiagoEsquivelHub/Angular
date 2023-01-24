@@ -1,0 +1,12 @@
+<!-- <input type="text" placeholder="Search repo!" id="autocomplete"> -->
+<!-- Hide element until render the element completely -->
+<ul class="no-list" ng-cloak>
+    <li ng-repeat="repo in posts">
+        <a href="#!/repo/{{repo.name}}">
+            <div back-img="{{repo.owner.avatar_url}}" class="circular"></div>
+            <h2>
+                {{repo.full_name}}
+            </h2>
+        </a>
+    </li>
+</ul>
