@@ -5,7 +5,6 @@ app.factory('ToDoService', (localStorageService) => {
     let toDoService = {}
     toDoService.key = "angular-todolist"
     toDoService.activities = []
-    toDoService.newActv = {}
 
     if (localStorageService.get(toDoService.key)) {
         toDoService.activities = localStorageService.get(toDoService.key)
@@ -15,9 +14,7 @@ app.factory('ToDoService', (localStorageService) => {
 
     toDoService.add = (newActv) => {
         toDoService.activities.push(newActv)
-        toDoService.newActv = {}
         toDoService.updateLocalStorage()
-        return toDoService.getAll()
 
     }
     toDoService.clean = () => {
